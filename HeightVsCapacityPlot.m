@@ -1,3 +1,6 @@
+% Gateway Capacity Estimator model as a function of height and PHY Maximum Coupling Loss
+% Mina Rady, Orange Labs, 2019
+
 clear
 mesh_resolution = 32;
 max_capacity1= 5000;
@@ -53,7 +56,7 @@ hold on
 view([-125 13]);
 hold off
 xlabel('Maximum Coupling Loss (dB)');
-ylabel('ED Spatial Density (EDs/km²)')
+ylabel('ED Spatial Density (EDs/kmÂ²)')
 zlabel('Number of EDs in GW range')
 zz = zlim;
 z_upper=zz(1,2);
@@ -116,7 +119,7 @@ hold on
 view([-125 13]);
 hold off
 xlabel('GW Maximum Coupling Loss (dB)');
-ylabel('ED Spatial Density (EDs/km²)')
+ylabel('ED Spatial Density (EDs/kmÂ²)')
 zlabel('Number of EDs in GW range')
 zlim([1e3 z_upper]);
 % Create legend
