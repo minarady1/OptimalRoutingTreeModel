@@ -95,31 +95,31 @@ relay_freq = tabulate(relay_v);
 sorted_relay_freq = sortrows(relay_freq,3,'desc');
  fig_index = 0
 %highlighting the high load relays
-% fig_index++
-% f= figure (fig_index);
-% MeshGraph = graph(s_v,t_v,w_v);
-% figure(1);
-% clf;
-% hold on;
-% plot(MeshGraph,'XData',mapXdata(1:NETWORK_SIZE,1),'YData',mapYdata(1:NETWORK_SIZE,1),'ZData',mapZdata(1:NETWORK_SIZE,1),'EdgeCData',MeshGraph.Edges.Weight);
-% %highlight roots in the plot
-% for (r=1:1:size(roots,2))
-% scatter3 (mapXdata(roots(1,r),:),mapYdata(roots(1,r),:),mapZdata(roots(1,r),:),50,'Marker','o','MarkerFaceColor',[0.8500 0.3250 0.0980]);
-% end
-% 
-% hl_relays = sorted_relay_freq(1:10,1)';
-% for (r=1:1:10)
-% scatter3 (mapXdata(hl_relays(1,r),:),mapYdata(hl_relays(1,r),:),mapZdata(hl_relays(1,r),:),70,'Marker','s','MarkerFaceColor',[0.3010 0.7450 0.9330]);
-% end
-% hold off;
-% colorbar;
-% colormap(flipud(jet));
-% t = title({'Network (Geo-)Logical Topology for ', char(exp_label)});
-% set(t, 'Interpreter', 'none');%to remove latex interpreter for underscores
-% %exp_label is set in the Orchestrator
-% saveas(f,strcat('Figures/',char(exp_label),'_TopologyPlot.fig'));
-% saveas(f,strcat('Figures/',char(exp_label),'_TopologyPlot.png'));
-% 
+fig_index++
+f= figure (fig_index);
+MeshGraph = graph(s_v,t_v,w_v);
+figure(1);
+clf;
+hold on;
+plot(MeshGraph,'XData',mapXdata(1:NETWORK_SIZE,1),'YData',mapYdata(1:NETWORK_SIZE,1),'ZData',mapZdata(1:NETWORK_SIZE,1),'EdgeCData',MeshGraph.Edges.Weight);
+%highlight roots in the plot
+for (r=1:1:size(roots,2))
+scatter3 (mapXdata(roots(1,r),:),mapYdata(roots(1,r),:),mapZdata(roots(1,r),:),50,'Marker','o','MarkerFaceColor',[0.8500 0.3250 0.0980]);
+end
+
+hl_relays = sorted_relay_freq(1:10,1)';
+for (r=1:1:10)
+scatter3 (mapXdata(hl_relays(1,r),:),mapYdata(hl_relays(1,r),:),mapZdata(hl_relays(1,r),:),70,'Marker','s','MarkerFaceColor',[0.3010 0.7450 0.9330]);
+end
+hold off;
+colorbar;
+colormap(flipud(jet));
+t = title({'Network (Geo-)Logical Topology for ', char(exp_label)});
+set(t, 'Interpreter', 'none');%to remove latex interpreter for underscores
+%exp_label is set in the Orchestrator
+saveas(f,strcat('Figures/',char(exp_label),'_TopologyPlot.fig'));
+saveas(f,strcat('Figures/',char(exp_label),'_TopologyPlot.png'));
+ 
 
 fig_index =fig_index+1
 f= figure (fig_index);
